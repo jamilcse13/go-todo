@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/jamilcse13/go-todo/database"
+	"go-todo/database"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

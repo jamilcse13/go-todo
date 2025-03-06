@@ -1,4 +1,4 @@
-module github.com/jamilcse13/go-todo
+module go-todo
 
 go 1.22
 
