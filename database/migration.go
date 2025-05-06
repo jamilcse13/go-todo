@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/jamilcse13/go-todo/models"
+	"go-todo/models"
 	"gorm.io/gorm"
 )
 

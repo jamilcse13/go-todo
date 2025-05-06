@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jamilcse13/go-todo/config" // Import config package
+	"go-todo/config" // Import config package
 	"github.com/gin-gonic/gin"
 )
 
