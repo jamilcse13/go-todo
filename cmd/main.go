@@ -2,9 +2,9 @@
 package main
 
 import (
-	"fmt"
+	"go-todo/config"
+	"go-todo/routes"
 
-	"go-todo/config" // Import config package
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,15 +12,12 @@ func main() {
 	// Connect to database
 	config.ConnectDB()
 
-	// Initialize router
 	r := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{"message": "Go API with PostgreSQL"})
-	})
+	// Initialize router
+	routes.SetupRouter(r)
 
-	// Start server
+	// run
 	port := ":9090"
-	fmt.Println("Server is running on port", port)
 	r.Run(port)
 }

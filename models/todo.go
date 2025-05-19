@@ -6,8 +6,7 @@ import (
 
 type Todo struct {
 	gorm.Model
-	ID		  uint   `json:"id" gorm:"primary_key"`
-	Title	 string  `json:"title"`
+	Title       string `json:"title"`
 	Description string `json:"description"`
-	Completed bool `json:"completed"`
+	Completed   bool   `json:"completed"`
 }
