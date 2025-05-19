@@ -1,3 +1,4 @@
+# ---------- Builder Stage ----------
 # Use Golang as base image
 FROM golang:1.22-alpine AS builder
 
@@ -20,6 +21,8 @@ COPY . .
 # Build the application
 RUN go build -o go-todo ./cmd/main.go
 
+
+# ---------- Final Stage ----------
 # Use a minimal base image
 FROM alpine:3.18
 
@@ -28,6 +31,10 @@ WORKDIR /app
 
 # Copy the compiled binary
 COPY --from=builder /app/go-todo .
+
+# 🔥 Copy wait-for.sh from your source repo to image
+COPY wait-for.sh /wait-for.sh
+RUN chmod +x /wait-for.sh
 
 # Expose the application port
 EXPOSE 9090

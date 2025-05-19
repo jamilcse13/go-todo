@@ -8,6 +8,9 @@ services:
       - "9090:9090"
     depends_on:
       - db
+    env_file:
+      - .env
+    command: ["/wait-for.sh", "db", "./go-todo"]
     environment:
       DB_HOST: ${DB_HOST}
       DB_USER: ${DB_USER}
